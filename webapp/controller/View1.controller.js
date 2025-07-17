@@ -1,7 +1,12 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/routing/History",
+    "sap/ui/core/UIComponent"
 ],
-function (Controller) {
+    /**
+     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     */
+function (Controller,History,UIComponent) {
     "use strict";
 
     return Controller.extend("zbvov.controller.View1", {
@@ -9,9 +14,9 @@ function (Controller) {
 
         },
 
-        onPress: function() {
-            // This function will be called when the button is pressed
-            alert("Button Pressed!");
-        }
+        onCadastroOrdem: function(){
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("RouteOrdemNew");
+            }
     });
 });

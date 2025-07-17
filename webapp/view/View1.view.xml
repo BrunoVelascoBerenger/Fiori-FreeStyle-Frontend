@@ -1,49 +1,9 @@
 <mvc:View controllerName="zbvov.controller.View1"
+	xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns:t="sap.ui.table"
-    xmlns:l="sap.ui.layout"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <Button id="button1" text="Hello World" press="onPress" type="Accept"/>
-
-        <VBox class="sapUiTinyMargin">
-            <l:HorizontalLayout id="myHorizontalLayout" allowWrapping="true">
-                <Label text="Id do Cliente:" class="sapUiTinyMargin"/>
-                <Input width="300px" placeholder="Digite o Id..."/>
-            </l:HorizontalLayout>
-        </VBox>
-
-        <t:Table id="table1"
-            rows="{/OVCabSet}"
-            visibleRowCount="10"
-            threshold="10"
-            class="sapUiTinyMargin"
-            selectionMode="MultiToggle">
-            <t:toolbar>
-                <OverflowToolbar>
-                    <Title id="title" text="Ordens"></Title>
-                </OverflowToolbar>
-            </t:toolbar>
-            <t:columns>
-                <t:Column width="4rem" sortProperty="OrdemId">
-                    <Label text="OrdemId" />
-                    <t:template>
-                        <Text text="{OrdemId}" wrapping="false" />
-                    </t:template>
-                </t:Column>
-                <t:Column width="10rem" sortProperty="ClienteId" filterProperty="ClienteId" autoResizable="true">
-                    <Label text="Id do cliente" />
-                    <t:template>
-                        <Text text="{ClienteId}" wrapping="false" />
-                    </t:template>
-                </t:Column>
-                <t:Column width="10rem" sortProperty="TotalItens" filterProperty="TotalItens" autoResizable="true">
-                    <Label text="Total Itens" />
-                    <t:template>
-                        <Text text="{TotalItens}" wrapping="false" />
-                    </t:template>
-                </t:Column>
-            </t:columns>
-        </t:Table>
+    xmlns:core="sap.ui.core"
+	>
+    <Page title="{i18n>appTitle}">
+        <Button text="Formulário de Cadastro Ordem" press="onCadastroOrdem"/>
     </Page>
 </mvc:View>
